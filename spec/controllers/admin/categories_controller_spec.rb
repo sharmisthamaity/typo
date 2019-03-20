@@ -63,4 +63,11 @@ describe Admin::CategoriesController do
     assert_raise(ActiveRecord::RecordNotFound) { Category.find(test_id) }
   end
   
+  describe "test_new" do
+    it "should show form ready to be filled" do
+      get :new
+      response.should render_template('new')
+    end
+  end
+  
 end
